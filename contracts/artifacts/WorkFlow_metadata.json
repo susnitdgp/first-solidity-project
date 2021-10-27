@@ -44,6 +44,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getWalletNumber",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "returnProcessCount",
 				"outputs": [
@@ -85,11 +104,11 @@
 	},
 	"sources": {
 		"contracts/PredefinedNote.sol": {
-			"keccak256": "0xa625d9cb0234884b73d4d26c21d161e5cda6b594f22fba7c92b5b86e5402d3e0",
+			"keccak256": "0x6ea076168cfc7fabca35cabc2d8aba78232fa816fb8bdb5de2ba9af3378f1054",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://0a891793027472a0409b1d6f799ce6ff509fa747577a3bc5a068d8afee200920",
-				"dweb:/ipfs/QmRpySKjj64eQrPD82RkEhwTeq5yAD2SYrGQrQMnBPjkBi"
+				"bzz-raw://6023137831c6831d21e29c747e033ce33539d2bc5ba6d0357bc23aa02ebcae99",
+				"dweb:/ipfs/Qmbdx2aQdwXEq4MjoyBJxCMSCMee8yn4PCrPt7C5RF3DUa"
 			]
 		}
 	},

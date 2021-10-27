@@ -66,11 +66,11 @@
 	},
 	"sources": {
 		"contracts/PredefinedNote.sol": {
-			"keccak256": "0xa625d9cb0234884b73d4d26c21d161e5cda6b594f22fba7c92b5b86e5402d3e0",
+			"keccak256": "0x610fd95870d4149ece4ca738ecaa66d9906c028f6d1c73dfb1ec288d9af76a44",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://0a891793027472a0409b1d6f799ce6ff509fa747577a3bc5a068d8afee200920",
-				"dweb:/ipfs/QmRpySKjj64eQrPD82RkEhwTeq5yAD2SYrGQrQMnBPjkBi"
+				"bzz-raw://9e60a259efe44f2f49a7828fb3c559e20f96d3255864b9cf4dd78a614d6e7cb2",
+				"dweb:/ipfs/QmTe22xCH18wmUyF52WaatibWnEPhisrhM2LXZajFsEGPa"
 			]
 		}
 	},
