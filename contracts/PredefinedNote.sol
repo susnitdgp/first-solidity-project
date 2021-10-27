@@ -28,15 +28,46 @@ contract PredefinedNote{
     
     address recipient;
     
-    
-    function uploadSingleFile(string memory _name,string memory _mime, string memory _ipfsUrl) external returns (bool){
-        annexure memory _temp=annexure(_name,_mime,_ipfsUrl);
-        uploadedAnnexure.push(_temp);
+    function setTitle(string memory _title) external returns(bool){
+        subject=_title;
         return true;
     }
     
-    function getAllFiles() external view returns(annexure[] memory){
-        return uploadedAnnexure;
+    function getTitle() external view returns(string memory){
+        return subject;
+    }
+}
+
+contract WorkFlow{
+    
+   // mapping(address => PredefinedNote) instantiatedNotes;
+   
+    PredefinedNote[] instantiatedNotes;
+    uint totalEntries = 0;
+    
+    function createPredefinedNote(string memory _title) public returns (bool){
+        PredefinedNote _temp=new PredefinedNote();
+        _temp.setTitle(_title);
+        
+        instantiatedNotes.push(_temp);
+        ++totalEntries;
+        
+        return true;
+        
+    }
+    
+    function returnProcessCount() public view returns(uint){
+        return totalEntries;
+    }
+    
+    function getTitleIndex(uint _index) public view returns(string memory){
+        if(_index <= instantiatedNotes.length-1){
+            PredefinedNote p=instantiatedNotes[_index];
+            return p.getTitle();
+        }else{
+            return "Array Out of Bound";
+        }
+        
     }
     
 }

@@ -21,19 +21,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_a",
-						"type": "uint256"
-					}
-				],
-				"name": "setInteger",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -73,11 +60,11 @@
 	},
 	"sources": {
 		"contracts/FirstContract.sol": {
-			"keccak256": "0xb31199a133981661675837ecf9658ba741877e107ad1760d535d43ca71493cf0",
+			"keccak256": "0x11270bfe85ac0f03fcd3645f043617ad55d5b3151f96b230229aa38bc6da6774",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://2dbffaf8e482d10047670613d040f4d933183c7e1849ee1b3e67349320b680cf",
-				"dweb:/ipfs/QmfAMsBqUkk3oWfX7tPq6fk9CgnsfCQNC9JSivCqbDmHqh"
+				"bzz-raw://54c6f69ed812a67b1a0bfdf2c3c597c27c38ef47e5c8d9e12be2e2e2a3a70f26",
+				"dweb:/ipfs/QmegkLQoL11jHqj2mCV8CJgcv2C55xX6WAFZzcUyaWMcoB"
 			]
 		}
 	},
