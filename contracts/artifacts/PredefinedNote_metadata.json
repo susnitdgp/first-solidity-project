@@ -1,0 +1,105 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getAllFiles",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "mime",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "ipfsUrl",
+								"type": "string"
+							}
+						],
+						"internalType": "struct PredefinedNote.annexure[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_mime",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_ipfsUrl",
+						"type": "string"
+					}
+				],
+				"name": "uploadSingleFile",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PredefinedNote.sol": "PredefinedNote"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PredefinedNote.sol": {
+			"keccak256": "0x93a0e850ff944d2e4849c448fc0f2ad7dfdc2954a0a99f950aedf6c4124c0e97",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://951f9e56dddda0cf60b72c9a726c150d44c870adc0d6977334e04eac6808d7bc",
+				"dweb:/ipfs/QmbXuugyHWvD45CHWYHGw4pUp5FxT6yztSrk2EreJ4pP6k"
+			]
+		}
+	},
+	"version": 1
+}
