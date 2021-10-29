@@ -2,12 +2,14 @@
 pragma solidity ^0.8.7;
 
 struct Annexure{
+    uint version;
     string name;
     string mime;
     string ipfsUrl;
     uint uploadDate;
 }
 struct Notesheet{
+    uint version;
     string name;
     string mime;
     string ipfsUrl;
@@ -39,6 +41,7 @@ struct PredefinedNote{
     Notesheet notesheet;
     
     Employee initiator;
+    Employee[] filePaths;
     Employee currentOwner;
     
     UserAction[] userActions;
@@ -51,8 +54,8 @@ contract WorkFlow{
     
     mapping(string => PredefinedNote) instantiatedNotes;
    
-    PredefinedNote[] instantiatedNotes;
-    uint totalEntries = 0;
+    string[] instantiatedNotesId;
+    
     
     /*
     function createPredefinedNote(string memory _title) public returns (bool){
