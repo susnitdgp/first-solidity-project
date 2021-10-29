@@ -2,18 +2,14 @@
 pragma solidity ^0.8.7;
 
 struct Annexure{
-    uint version;
-    string name;
-    string mime;
+   
     string ipfsUrl;
-    uint uploadDate;
+    uint256 uploadDate;
 }
 struct Notesheet{
-    uint version;
-    string name;
-    string mime;
+    
     string ipfsUrl;
-    uint uploadDate;
+    uint256 uploadDate;
 }
 struct Employee{
     address walletNumber;
@@ -27,72 +23,64 @@ struct UserAction{
     address fromAddress;
     address toAddress;
     string action;
-    uint actionTime;
+    uint256 actionTime;
 }
 
 struct PredefinedNote{
     
     string fileId;
     string subject;
-    uint creationTime;
+    uint256 creationTime;
     
-    Annexure[] annexures;
+    //Annexure[] annexures;
   
     Notesheet notesheet;
     
-    Employee initiator;
-    Employee[] filePaths;
-    Employee currentOwner;
+    //address initiator;
+    //address[] filePaths;
+    //address currentOwner;
     
-    UserAction[] userActions;
+    //UserAction[] userActions;
     
-    string currentStatus;
+    //string currentStatus;
     
+}
+
+struct NoteTracker{
+    uint256 trackerId;
+    address currentOwner;
 }
 
 contract WorkFlow{
     
-    mapping(string => PredefinedNote) instantiatedNotes;
+    mapping(uint256 => PredefinedNote) instantiatedNotes;
    
-    string[] instantiatedNotesId;
+    NoteTracker[] trackers;
+    
+    mapping(address=>Employee) orgEmployees;
     
     
-    /*
-    function createPredefinedNote(string memory _title) public returns (bool){
-        Employee memory _emp=Employee(msg.sender,"Susanta Goswami");
-        PredefinedNote memory _temp=PredefinedNote("123",_title,_emp);
-        //_temp.subject=_title;
+    //Functionality Start
+    function createPredefinedNote(string memory _fileId,string memory _subject) public returns (uint256){
         
-        instantiatedNotes.push(_temp);
-        ++totalEntries;
+        uint256 time=block.timestamp;
         
-        return true;
+        Notesheet memory _notesheet=Notesheet("abc",time);
         
-    }
-    
-    function returnProcessCount() public view returns(uint){
-        return totalEntries;
-    }
-    
-    function getTitleIndex(uint _index) public view returns(string memory){
-        if(_index <= instantiatedNotes.length-1){
-            PredefinedNote memory p=instantiatedNotes[_index];
-            return p.subject;
-        }else{
-            return "Array Out of Bound";
-        }
+        PredefinedNote memory _temp=PredefinedNote(_fileId,_subject,time,_notesheet);
+        instantiatedNotes[block.timestamp]=_temp;
+        
+        NoteTracker memory _tracker=NoteTracker(time,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
+        trackers.push(_tracker);
+      
+        
+        return time;
         
     }
     
-    
-    function getWalletNumber(uint _index) public view returns(string memory){
-        if(_index <= instantiatedNotes.length-1){
-            PredefinedNote memory p=instantiatedNotes[_index];
-            return p.sender.empName;
-        }else{
-            return "Array Out of Bound";
-        }
-        
-    }*/
+    function getTitle(uint256 _id) public view returns(string memory){
+        PredefinedNote memory _temp=instantiatedNotes[_id];
+        return _temp.subject;
+    }
     
 }

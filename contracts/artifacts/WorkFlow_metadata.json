@@ -9,16 +9,21 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_title",
+						"name": "_fileId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_subject",
 						"type": "string"
 					}
 				],
 				"name": "createPredefinedNote",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -28,48 +33,16 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_index",
+						"name": "_id",
 						"type": "uint256"
 					}
 				],
-				"name": "getTitleIndex",
+				"name": "getTitle",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_index",
-						"type": "uint256"
-					}
-				],
-				"name": "getWalletNumber",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "returnProcessCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -104,11 +77,11 @@
 	},
 	"sources": {
 		"contracts/PredefinedNote.sol": {
-			"keccak256": "0x6ea076168cfc7fabca35cabc2d8aba78232fa816fb8bdb5de2ba9af3378f1054",
+			"keccak256": "0x23eb2ca6af672bd80bf91a1aa9949557d77cb6dbbc389b32d07c79edb107a329",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://6023137831c6831d21e29c747e033ce33539d2bc5ba6d0357bc23aa02ebcae99",
-				"dweb:/ipfs/Qmbdx2aQdwXEq4MjoyBJxCMSCMee8yn4PCrPt7C5RF3DUa"
+				"bzz-raw://8f78a6a676310a05c442c18310bd78306d0461ce10bd8e87c6b6d8dbdefafcd1",
+				"dweb:/ipfs/Qma9BowuLXc9RV8xxucSrGTaMDi6JpGRf2N9EPFaGP99t2"
 			]
 		}
 	},
