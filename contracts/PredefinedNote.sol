@@ -1,43 +1,60 @@
 //SPDX-License-Identifier:UNLICENSED
 pragma solidity ^0.8.7;
 
-struct annexure{
-        string name;
-        string mime;
-        string ipfsUrl;
-    }
+struct Annexure{
+    string name;
+    string mime;
+    string ipfsUrl;
+    uint uploadDate;
+}
+struct Notesheet{
+    string name;
+    string mime;
+    string ipfsUrl;
+    uint uploadDate;
+}
 struct Employee{
-        address walletNumber;
-        //string empNum;
-        string empName;
-        //string designation;
-       // string plantName;
-    }
+    address walletNumber;
+    string empNum;
+    string empName;
+    string designation;
+    string plantName;
+}
 
-struct  PredefinedNote{
+struct UserAction{
+    address fromAddress;
+    address toAddress;
+    string action;
+    uint actionTime;
+}
+
+struct PredefinedNote{
     
     string fileId;
     string subject;
+    uint creationTime;
     
+    Annexure[] annexures;
   
-    //annexure[] uploadedAnnexure;
-  
-    //string notesheetUrl;
+    Notesheet notesheet;
     
-    Employee sender;
+    Employee initiator;
+    Employee currentOwner;
     
-    //address recipient;
+    UserAction[] userActions;
     
+    string currentStatus;
     
 }
 
 contract WorkFlow{
     
-   // mapping(address => PredefinedNote) instantiatedNotes;
+    mapping(string => PredefinedNote) instantiatedNotes;
    
     PredefinedNote[] instantiatedNotes;
     uint totalEntries = 0;
     
+    /*
     function createPredefinedNote(string memory _title) public returns (bool){
         Employee memory _emp=Employee(msg.sender,"Susanta Goswami");
         PredefinedNote memory _temp=PredefinedNote("123",_title,_emp);
@@ -73,6 +90,6 @@ contract WorkFlow{
             return "Array Out of Bound";
         }
         
-    }
+    }*/
     
 }
