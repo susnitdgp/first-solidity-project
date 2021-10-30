@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Response",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -19,13 +32,7 @@
 					}
 				],
 				"name": "createPredefinedNote",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -77,11 +84,11 @@
 	},
 	"sources": {
 		"contracts/PredefinedNote.sol": {
-			"keccak256": "0x23eb2ca6af672bd80bf91a1aa9949557d77cb6dbbc389b32d07c79edb107a329",
+			"keccak256": "0x582b1c772a89e9b5a3824ff71a56c8a2cd24c796b474dd63ca45838de8790f5d",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://8f78a6a676310a05c442c18310bd78306d0461ce10bd8e87c6b6d8dbdefafcd1",
-				"dweb:/ipfs/Qma9BowuLXc9RV8xxucSrGTaMDi6JpGRf2N9EPFaGP99t2"
+				"bzz-raw://620c37b36b12f9004cbe875a4d8ee80102bbab60962145c7a3c951fc2d8ea96a",
+				"dweb:/ipfs/QmR6fTusGfjtxT9zEmj1JYDWeUvnizP3vkC9rwTnP4YZDm"
 			]
 		}
 	},

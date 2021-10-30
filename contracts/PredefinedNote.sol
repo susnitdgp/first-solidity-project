@@ -61,7 +61,8 @@ contract WorkFlow{
     
     
     //Functionality Start
-    function createPredefinedNote(string memory _fileId,string memory _subject) public returns (uint256){
+    event Response(uint256);
+    function createPredefinedNote(string memory _fileId,string memory _subject) public{
         
         uint256 time=block.timestamp;
         
@@ -74,7 +75,7 @@ contract WorkFlow{
         trackers.push(_tracker);
       
         
-        return time;
+        emit Response(time);
         
     }
     
