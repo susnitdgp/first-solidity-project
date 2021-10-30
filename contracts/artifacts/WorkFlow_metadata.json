@@ -54,6 +54,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "randMod",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -84,11 +97,11 @@
 	},
 	"sources": {
 		"contracts/PredefinedNote.sol": {
-			"keccak256": "0x582b1c772a89e9b5a3824ff71a56c8a2cd24c796b474dd63ca45838de8790f5d",
+			"keccak256": "0xd8806eafe622a4a840fddd233a0b2e0f29ffda70d4db7555f909663c2a0c5275",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://620c37b36b12f9004cbe875a4d8ee80102bbab60962145c7a3c951fc2d8ea96a",
-				"dweb:/ipfs/QmR6fTusGfjtxT9zEmj1JYDWeUvnizP3vkC9rwTnP4YZDm"
+				"bzz-raw://06c450d28bfd1b61e1bf4d270329ae0b845c1d0dc60cc48bb9442377b37daeb6",
+				"dweb:/ipfs/QmPU35t2nm34iT9WgPHCoPfsnDhfuGvg8r1Mnhagq81k8X"
 			]
 		}
 	},

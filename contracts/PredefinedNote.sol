@@ -62,6 +62,7 @@ contract WorkFlow{
     
     //Functionality Start
     event Response(uint256);
+    
     function createPredefinedNote(string memory _fileId,string memory _subject) public{
         
         uint256 time=block.timestamp;
@@ -82,6 +83,13 @@ contract WorkFlow{
     function getTitle(uint256 _id) public view returns(string memory){
         PredefinedNote memory _temp=instantiatedNotes[_id];
         return _temp.subject;
+    }
+    
+    function randMod() public view returns(bytes32)
+    {
+        // increase nonce
+        uint randNonce=trackers.length+1; 
+        return (keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) ;
     }
     
 }
