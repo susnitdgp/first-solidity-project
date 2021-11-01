@@ -46,49 +46,60 @@ struct PredefinedNote{
     
 }
 
-struct NoteTracker{
-    uint256 trackerId;
+struct PredefinedNoteTracker{
+    bytes32 trackerId;
     address currentOwner;
 }
 
-contract WorkFlow{
+contract PredefinedWorkFlow{
     
-    mapping(uint256 => PredefinedNote) instantiatedNotes;
-   
-    NoteTracker[] trackers;
+    mapping(bytes32 => PredefinedNote) instantiatedNotes;
+    PredefinedNoteTracker[] instantiatedNotesTrackers;
     
-    mapping(address=>Employee) orgEmployees;
+    mapping(address=>Employee) validEmployees;
     
     
     //Functionality Start
-    event Response(uint256);
-    
+    event Response(bytes32,address);
     function createPredefinedNote(string memory _fileId,string memory _subject) public{
         
-        uint256 time=block.timestamp;
+        bytes32 _noteid=getNoteId();
+        uint _currentTime=block.timestamp;
         
-        Notesheet memory _notesheet=Notesheet("abc",time);
+        Notesheet memory _notesheet=Notesheet("abc",123456);
         
-        PredefinedNote memory _temp=PredefinedNote(_fileId,_subject,time,_notesheet);
-        instantiatedNotes[block.timestamp]=_temp;
+        PredefinedNote memory _temp=PredefinedNote(_fileId,_subject,_currentTime,_notesheet);
+        instantiatedNotes[_noteid]=_temp;
         
-        NoteTracker memory _tracker=NoteTracker(time,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
-        trackers.push(_tracker);
+        PredefinedNoteTracker memory _tracker=PredefinedNoteTracker(_noteid,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
+        instantiatedNotesTrackers.push(_tracker);
       
         
-        emit Response(time);
+        emit Response(_noteid,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
         
     }
     
-    function getTitle(uint256 _id) public view returns(string memory){
-        PredefinedNote memory _temp=instantiatedNotes[_id];
-        return _temp.subject;
+    function getSubject() public view returns(string memory){
+        
+        string memory _subject;
+        for(uint i=0;i<instantiatedNotesTrackers.length;i++){
+            PredefinedNoteTracker memory _temp=instantiatedNotesTrackers[i];
+            _subject=instantiatedNotes[_temp.trackerId].subject;
+        }
+        
+        return _subject;
     }
     
-    function randMod() public view returns(bytes32)
+    
+    function getListofFiles() public view returns(bytes32,address){
+        
+        return (instantiatedNotesTrackers[0].trackerId,instantiatedNotesTrackers[0].currentOwner);
+    }
+    
+    function getNoteId() internal view returns(bytes32)
     {
         // increase nonce
-        uint randNonce=trackers.length+1; 
+        uint randNonce=instantiatedNotesTrackers.length+1; 
         return (keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) ;
     }
     
