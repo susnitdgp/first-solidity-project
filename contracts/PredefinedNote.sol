@@ -71,11 +71,11 @@ contract PredefinedWorkFlow{
         PredefinedNote memory _temp=PredefinedNote(_fileId,_subject,_currentTime,_notesheet);
         instantiatedNotes[_noteid]=_temp;
         
-        PredefinedNoteTracker memory _tracker=PredefinedNoteTracker(_noteid,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
+        PredefinedNoteTracker memory _tracker=PredefinedNoteTracker(_noteid,0x3C9600304FcEd7Fc41DF9f599E4bCd50dd90347d);
         instantiatedNotesTrackers.push(_tracker);
       
         
-        emit Response(_noteid,0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8);
+        emit Response(_noteid,0x3C9600304FcEd7Fc41DF9f599E4bCd50dd90347d);
         
     }
     
@@ -91,9 +91,23 @@ contract PredefinedWorkFlow{
     }
     
     
-    function getListofFiles() public view returns(bytes32,address){
+    function getListofFilesForAddress(address _address) public view returns(PredefinedNoteTracker[] memory){
+        PredefinedNoteTracker[] memory _list=new PredefinedNoteTracker[](instantiatedNotesTrackers.length);
         
-        return (instantiatedNotesTrackers[0].trackerId,instantiatedNotesTrackers[0].currentOwner);
+        for(uint i=0;i<instantiatedNotesTrackers.length;i++){
+            
+            PredefinedNoteTracker memory _temp=instantiatedNotesTrackers[i];
+            if (_temp.currentOwner == _address){
+                _list[i]=_temp;
+            }
+        }
+        
+        return _list;
+    }
+    
+    function getPredefinedNote(bytes32 _trackerId) public view returns(PredefinedNote memory){
+        
+        return instantiatedNotes[_trackerId];
     }
     
     function getNoteId() internal view returns(bytes32)
